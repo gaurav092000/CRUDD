@@ -15,6 +15,7 @@ namespace CRUD.Controllers
         public ActionResult Index()
         {
             var data=pr.products.ToList();
+
             return View(data);
         }
         public ActionResult Create()
@@ -23,6 +24,7 @@ namespace CRUD.Controllers
         }
 
         [HttpPost]
+
         public ActionResult Create(Product p) 
         {
             pr.products.Add(p);
@@ -31,7 +33,11 @@ namespace CRUD.Controllers
             {
                 ViewBag.InsertMessage = "<script>alert('')</script>";
             }
-            return RedirectToAction("Index");
+            if(ModelState.IsValid==true)
+            {
+                ViewData["Succes Data"] = "<script>alert('Data has  been sava ')</script>";
+            }
+            return Redirect("Index");
         }
 
         public ActionResult Edit()
