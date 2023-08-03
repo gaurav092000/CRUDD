@@ -44,13 +44,6 @@ namespace CRUD.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public ActionResult Edit(Product p)
-        {
-            pr.products.AddOrUpdate(p);
-            pr.SaveChanges();
-            return RedirectToAction("Index");
-        }
 
 
         
