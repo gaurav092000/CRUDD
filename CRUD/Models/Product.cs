@@ -16,7 +16,7 @@ namespace CRUD.Models
         public int Quatity { get; set; }
 
         public float Price { get; set; }
-
+        []
         public bool IsDeleted { get; set; }
 
         public bool IsUpdated { get; set; }
